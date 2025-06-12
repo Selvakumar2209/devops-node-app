@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "selvakumar2209/devops-node-app"
+        DOCKER_IMAGE = "selvakumar2209/gitops-node-app"
         IMAGE_TAG = "${BUILD_NUMBER}"
         HELM_REPO = "https://github.com/Selvakumar2209/devops-helm-charts"
         HELM_DIR = "helm-node-app"

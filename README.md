@@ -1,4 +1,4 @@
-# GitOps Node.js Application
+# Real-Time DevOps CI/CD Pipeline with GitOps using Jenkins, Docker, ArgoCD, Helm & EKS
 
 This is a simple Node.js application built with Express, used for demonstrating a complete GitOps CI/CD pipeline deployment on Kubernetes using Jenkins, Docker, Helm, and ArgoCD.
 

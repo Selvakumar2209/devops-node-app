@@ -45,8 +45,8 @@ pipeline {
         
                         withCredentials([usernamePassword(credentialsId: 'github-creds', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
                             sh """
-                            git config user.name "Jenkins"
-                            git config user.email "jenkins@yourdomain.com"
+                            git config user.name "Selvakumar A (via Jenkins)"
+                            git config user.email "a.selvakumar2209@gmail.com"
                             git add .
                             git commit -m "🔄 Update image tag to ${IMAGE_TAG} via Jenkins"
                             git push https://${GIT_USER}:${GIT_PASS}@github.com/Selvakumar2209/devops-helm-charts.git HEAD:main

@@ -36,12 +36,11 @@ pipeline {
         stage('Update Helm values.yaml') {
             steps {
                 script {
-                    // Clone Helm repo
-                    sh "git clone ${HELM_REPO}"
-        
-                    // Update tag in values.yaml and push to GitHub
-                    dir("${HELM_DIR}") {
-                        sh "sed -i 's|tag:.*|tag: \"${IMAGE_TAG}\"|' values.yaml"
+                                 // Clone Helm repo into a specific directory
+                     sh "git clone --single-branch ${HELM_REPO} devops-helm-charts"
+            
+                     dir("devops-helm-charts/${HELM_DIR}") {
+                            sh "sed -i 's|tag:.*|tag: \"${IMAGE_TAG}\"|' values.yaml"
         
                         withCredentials([usernamePassword(credentialsId: 'github-creds', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
                             sh """

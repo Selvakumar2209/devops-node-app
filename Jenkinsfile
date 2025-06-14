@@ -36,6 +36,8 @@ pipeline {
         stage('Update Helm values.yaml') {
             steps {
                 script {
+                    // Remove any existing clone to avoid conflicts
+                     sh "rm -rf devops-helm-charts"
                                  // Clone Helm repo into a specific directory
                      sh "git clone --single-branch ${HELM_REPO} devops-helm-charts"
             
